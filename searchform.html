@@ -1,0 +1,36 @@
+<script src='script.js'></script>
+
+<form name='search_alist'>
+    <table class="table table-striped table-text" width: 100%;>
+        <tr>
+            <td><input type='text' name='keyword' size='40' style="width:240px;" placeholder="ระบุคำค้น"> <select name="type_keyword" style="width:140px;">
+                    <option value="ti=">ชื่อเรื่อง(คำสำคัญ)</option>
+                    <option value="ti:">ชื่อเรื่อง(คำขึ้นต้น)</option>
+                    <option value="au=">ผู้แต่ง(คำสำคัญ)</option>
+                    <option value="au:">ผู้แต่ง(คำขึ้นต้น)</option>
+                    <option value="su=">หัวเรื่อง(คำสำคัญ)</option>
+                    <option value="su:">หัวเรื่อง(คำขึ้นต้น)</option>
+                    <option value="ca:">เลขหมู่</option>
+                    <option value="lc:">เลขเรียก LC</option>
+                    <option value="loc:">เลขเรียก Local</option>
+                    <option value="nc:">เลขเรียก NLM</option>
+                    <option value="bib=">เลข Bib</option>
+                    <option value="bar:">รหัส</option>
+                    <option value="dc:">เลขเรียก Dewey</option>
+                    <option value="bn:">เลข ISBN</option>
+                    <option value="sn:">เลข ISSN</option>
+                    <option value="yr=">ปีที่พิมพ์</option>
+                    <option value="all=">ไม่กำหนด</option>
+                    <option value="ta=">แท็กที่ผู้ใช้กำหนด</option>
+                </select>
+                <input type='button' class="button btn-default" value='ค้นหา' onclick="saveResult('โปรดรอสักครู่ <img src=\'https://sdss.oas.psu.ac.th/loader.gif\' width=\'100\'>','search_result');startRequest('POST','search_alist.php','search_result',this.form)" name='search_button'>
+            </td>
+        </tr>
+    </table>
+    <table class="table table-bordered" style="display:;">
+        <tr>
+            <td id='search_result'></td>
+        </tr>
+    </table>
+    <!--<span id='search_result'></span>-->
+</form>
